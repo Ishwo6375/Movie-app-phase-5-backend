@@ -32,7 +32,7 @@ rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity
    private
 
    def review_params
-    
+     params.require(:review).permit(:comment, :rating, :movie, :user)
    end
 
    def find_review
