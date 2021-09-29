@@ -32,7 +32,7 @@ rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity
    private
 
    def movie_params
-    params.require(:movie).permit(:title, :description, :language, :runtime, :rating, :image, :video_url, :genre, :director)
+    params.require(:movie).permit(:title, :description, :language, :runtime, :rating, :image, :video_url, :genre, :director_id)
    end
 
    def find_movie

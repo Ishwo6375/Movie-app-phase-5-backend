@@ -12,7 +12,7 @@ rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity
    render json: movielist
   end
 
-  def create
+   def create
    movielist = Movielist.create!(movielist_params)
    render json: movielist
   end
@@ -32,7 +32,7 @@ rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity
    private
 
    def movielist_params
-    params.require(:movielist).permit(:title, :description, :image, :user)
+    params.require(:movielist).permit(:title, :description, :image, :user_id)
    end
 
    def find_movielist

@@ -9,7 +9,7 @@ rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity
 
   def show
    review = find_review
-   render json: review, include: [:movie, :user]
+   render json: review
   end
 
   def create
@@ -32,7 +32,7 @@ rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity
    private
 
    def review_params
-     params.require(:review).permit(:comment, :rating, :movie, :user)
+     params.require(:review).permit(:comment, :rating, :movie_id, :user_id)
    end
 
    def find_review
