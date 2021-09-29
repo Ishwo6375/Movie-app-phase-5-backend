@@ -9,7 +9,7 @@ rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity
 
   def show
    review = find_review
-   render json: review, include: include: [:movie, :user]
+   render json: review, include: [:movie, :user]
   end
 
   def create
