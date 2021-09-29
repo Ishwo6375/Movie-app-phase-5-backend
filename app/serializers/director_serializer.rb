@@ -1,3 +1,3 @@
 class DirectorSerializer < ActiveModel::Serializer
-  attributes :id
+  attributes :id, :name, :bio, :age, :image
 end
