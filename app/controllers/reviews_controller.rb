@@ -24,7 +24,7 @@ rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity
   end
 
    def destroy
-    review = find_movie
+    review = find_review
     review.destroy
     head :no_content
    end
